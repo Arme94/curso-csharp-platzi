@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
-using curso_csharp_platzi.Entidades;
 
-namespace CoreEscuela
+namespace CoreEscuela.App
 {
     public sealed class EscuelaEngine
     {

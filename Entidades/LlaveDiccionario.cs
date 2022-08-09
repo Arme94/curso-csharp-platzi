@@ -1,4 +1,4 @@
-namespace curso_csharp_platzi.Entidades
+namespace CoreEscuela.Entidades
 {
     public enum LlaveDiccionario{
         Escuela,
