@@ -16,10 +16,18 @@ namespace CoreEscuela.App
             _diccionario = dicObjEscuela;
         }
 
-        public IEnumerable<Escuela>  GetListaEvaluaciones(){
-            var lista = _diccionario.GetValueOrDefault(LlaveDiccionario.Escuela);
+        public IEnumerable<Evaluación>  GetListaEvaluaciones(){
+            var lista = _diccionario.GetValueOrDefault(LlaveDiccionario.Evaluacion);
 
-            return lista.Cast<Escuela>();
+            return lista.Cast<Evaluación>();
+        }
+
+        public IEnumerable<Asignatura>  GetListaAsignaturas(){
+            var listaEval = GetListaEvaluaciones();
+
+            return (from Evaluación ev in listaEval
+                    select ev.Asignatura ).DistinctBy(Asig => Asig.Nombre);
+
         }
     }
 }
